@@ -1,39 +1,19 @@
 package br.com.dio.dominio;
 
+import br.com.dio.dominio.Conteudo;
+
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo {
 
-    private String titulo;
-    private String desricao;
-    private int cargaHoraria;
     private LocalDate data;
 
-    public Mentoria(){
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO + 20d;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDesricao() {
-        return desricao;
-    }
-
-    public void setDesricao(String desricao) {
-        this.desricao = desricao;
-    }
-
-    public int getCargaHoraria() {
-        return cargaHoraria;
-    }
-
-    public void setCargaHoraria(int cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+    public Mentoria() {
     }
 
     public LocalDate getData() {
@@ -47,9 +27,8 @@ public class Mentoria {
     @Override
     public String toString() {
         return "Mentoria{" +
-                "titulo='" + titulo + '\'' +
-                ", desricao='" + desricao + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", data=" + data +
                 '}';
     }
